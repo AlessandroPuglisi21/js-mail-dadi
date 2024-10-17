@@ -9,4 +9,3 @@ if(mailPresent.includes(myMail)){
 }else{
     console.log(`Mi spiace ${myMail}, ma la tua Email non é presente`)
 }
-
