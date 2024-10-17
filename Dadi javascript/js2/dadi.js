@@ -5,15 +5,25 @@
 // Che ci sia un array da qualche parte?
 // Se dobbiamo confrontare qualcosa che “cosa” ci serve
 
-const pcNumber = Math.floor(Math.random() * 6) + 1;
-const playerNumber = Math.floor(Math.random() * 6) + 1;
+function tiraDadi() {
+    const pcNumber = Math.floor(Math.random() * 6) + 1; 
+    const playerNumber = Math.floor(Math.random() * 6) + 1; 
 
-console.log(`Il tuo Numero = ${playerNumber} - Il Numero del Tuo avversario ${pcNumber}`)
+    console.log(`Il tuo Numero = ${playerNumber} - Il Numero del Tuo avversario = ${pcNumber}`);
 
-if(playerNumber > pcNumber){
-    console.log(`HAI VINTO!`)
-}else if (pcNumber > playerNumber){
-    console.log('IL TUO AVVERSARIO HA VINTO ;(')
-}else {
-    console.log('AVETE PAREGGIATO RITIRA I DADI!')
+    let resultMessage;
+
+    if (playerNumber > pcNumber) {
+        resultMessage = (`TU (${playerNumber}) - AVVERSSARIO (${pcNumber})<br> HAI VINTO!`);
+        messageColor = 'win'
+    } else if (pcNumber > playerNumber) {
+        resultMessage = (`TU (${playerNumber}) - AVVERSSARIO (${pcNumber})<br>  HAI PERSO!`);
+        messageColor = 'Lose'
+    } else {
+        resultMessage = (`TU (${playerNumber}) - AVVERSSARIO (${pcNumber})<br>  AVETE PAREGGIATO`);
+        messageColor = 'pareggio'
+    }
+
+   //ID NUMBER
+    document.getElementById('number').innerHTML= resultMessage;
 }
